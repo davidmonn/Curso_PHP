@@ -18,4 +18,5 @@
 
     $david->falar();
     // As funcoes sao invocadas com os parenteses e colocar sempre sentinha quando nos referimos a um obejto
+    
 ?>
