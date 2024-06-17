@@ -2,7 +2,7 @@
 
     $nome = "David"; //String
     $numI = 27; // Inteiro
-    $numB = 1.77; //Booleano
+    $numB = 1.77; //Float
 
     $itens = ["Violao", "Notebook","Celular", "Fone de Ouvido"]; // Array
 
