@@ -9,28 +9,28 @@
     $msg1 = "Peso ideal <br>";
     $msg2 = "Acima do peso <br>";
 
-    if($peso1 <= $pesoMax) {
-        echo "1 True - " .$msg1;
+    if($peso1 > $pesoMax) {
+        echo "1 True - " .$msg2;
     } else {
-        echo "1 False - " .$msg2;
+        echo "1 False - " .$msg1;
     }
 
-    if($peso2 <= $pesoMax) {
-        echo "2 True - " .$msg1;
+    if($peso2 > $pesoMax) {
+        echo "2 True - " .$msg2;
     } else {
-        echo "2 False - " .$msg2;
+        echo "2 False - " .$msg1;
     }
 
-    if($peso3 <= $pesoMax) {
-        echo "3 True - " .$msg1;
+    if($peso3 > $pesoMax) {
+        echo "3 True - " .$msg2;
     } else {
-        echo "3 False - " .$msg2;
+        echo "3 False - " .$msg1;
     }
 
-    if($peso4 <= $pesoMax) {
-        echo "4 True - " .$msg1;
+    if($peso4 > $pesoMax) {
+        echo "4 True - " .$msg2;
     } else {
-        echo "4 False - " .$msg2;
+        echo "4 False - " .$msg1;
     }
     
 ?>
