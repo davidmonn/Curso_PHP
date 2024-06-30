@@ -2,6 +2,7 @@
 
     function verificarCategoria(string $categoria) {
         switch ($categoria) {
+
             case "eletrônicos":
                 return "Essa categoria é de produtos eletrônicos";
                 
@@ -13,6 +14,7 @@
 
             default:
                 return "Categoria desconhecida";
+                
         }
     }
 
