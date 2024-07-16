@@ -1,22 +1,23 @@
 <?php
-
-    function number($arrNumb){
-
+    function number($nFunc) {
         $valores = [];
-        foreach($arrNumb as $num){
-            if($num > 7){
-                $valores[] = $num;
+
+        for($iFunc = 0; $iFunc < count($nFunc); $iFunc++) {
+            if($nFunc[$iFunc] > 7) {
+                array_push($valores, $nFunc[$iFunc]);
             }
         }
-
         return $valores;
-
     }
 
-    $arrNumb = [8,9,10,11,12,13,14,15,16,17];
+    $numeros = [];
 
-    $result = number($arrNumb);
+    for($i = 7; $i <= 20; $i++) {
+        array_push($numeros, $i);
+    }
 
-    foreach($result as $valores);
-    echo $valores . " ";
+    $resultFinal = number($numeros);
+
+    print_r($resultFinal);
+    
 ?>
