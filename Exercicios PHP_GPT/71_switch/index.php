@@ -8,13 +8,13 @@ Crie uma função chamada calcularPreco que recebe dois parâmetros: o tipo de i
     function calcImoveis($local, $metros) {
         switch($local) {
             case 'apartamento':
-                return "2000 por metro quadrado = " . 2000* $metros . "<br>";
+                return "Apartamento 2000 por metro quadrado = " . 2000* $metros . "<br>";
             case 'casa':
-                return "3000 por metro quadrado = " . 3000 * $metros . "<br>";
+                return "Casa 3000 por metro quadrado = " . 3000 * $metros . "<br>";
             case 'cobertura':
-                return "5000 por metro quadrado = " . 5000 * $metros . "<br>";
+                return "Cobertura 5000 por metro quadrado = " . 5000 * $metros . "<br>";
             case 'loja':
-                return "4000 por metro quadrado = ". 4000 * $metros . "<br>";
+                return "Loja 4000 por metro quadrado = ". 4000 * $metros . "<br>";
             default:
                 return "Tipo de imovel invalido <br>";
         }
