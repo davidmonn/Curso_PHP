@@ -12,7 +12,7 @@
 
     echo $arrM[1][2] . " acessa ultimo elemento, segundo array <br>";  // Acessando segundo array e ultimo elemento
 
-    echo count($arrM) ." Elementos array princial <br>"; // Mostra a quantidade de elementos no array principal
+    echo count($arrM) ." Elementos array principal <br>"; // Mostra a quantidade de elementos no array principal
     echo count($arrM[0]) ." Quantidade do primeiro array <br>"; // Mostra o count do primeiro array
 
 ?>
