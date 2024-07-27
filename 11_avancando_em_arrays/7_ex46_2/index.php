@@ -34,7 +34,7 @@
     print_r($result);
     echo "<br>";
 
-    $result2 = usuarios($multArr[1]);
+    $result2 = usuarios($multArr[2]);
     print_r($result2);
 
 ?>
