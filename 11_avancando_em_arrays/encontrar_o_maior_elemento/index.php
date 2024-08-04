@@ -1,18 +1,25 @@
 <?php
 
+    /*
+    Escreva uma função chamada maiorElemento que recebe um array de números como parâmetro.
+    A função deve retornar o maior elemento presente no array.
+    Considere que o array sempre terá pelo menos um elemento.
+    */
+
     function maiorElemento($arr) {
-        $recbComp = 0;
-        
-        for($ind = 0; $ind < count($arr); $ind++) {
-            $check = $arr[$ind];
-            if($arr[$ind] > $check) {
-                $recbComp++;
+        $maior = $arr[0];
+
+        foreach($arr as $valor) {
+            if($valor > $maior) {
+                $maior = $valor;
             }
         }
-        return $recbComp;
+        return $maior;
     }
-    
-    $valores = [1,15,12,11,55,27];
-    $resultado = maiorElemento($valores);
-    
-    print_r($resultado);
+
+    $n = [1,5,78,4,6,8,9,10,55];
+    $result = maiorElemento($n);
+
+    print_r($result);
+
+?>
