@@ -49,7 +49,7 @@
         }
     }
 
-    $tarefa1 = new Task();
+    $tarefa1 = new Task("Estudar", "Estudar para Prova");
     $tarefa1->title;
     $tarefa1->description;
     
