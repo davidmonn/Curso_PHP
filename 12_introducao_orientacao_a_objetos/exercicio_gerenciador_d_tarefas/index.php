@@ -1,5 +1,4 @@
 <?php
-
     /*
     Crie uma classe chamada Task que represente uma tarefa.
     A classe Task deve ter os seguintes atributos:
@@ -63,5 +62,4 @@
     } else {
         echo "Tarefa incompleta.<br>";
     }
-
 ?>
