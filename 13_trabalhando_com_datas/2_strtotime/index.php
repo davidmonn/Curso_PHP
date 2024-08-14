@@ -18,8 +18,8 @@
     $dataAtualMaisDoisMeses = date("d/m/y", $doisMeses);
     echo "Data atual mais 2 meses: {$dataAtualMaisDoisMeses} <br>";
 
-    //echo $dozeAnos = date("d/m/y", strtotime("+12 years")) . "<br>";
-    $dozeAnos = strtotime("+12 years");
+    //echo $dozeAnos = date("d/m/y", strtotime("12 years")) . "<br>";
+    $dozeAnos = strtotime("12 years");
     echo date("d/m/y", $dozeAnos) . "<br>";
 
 ?>
