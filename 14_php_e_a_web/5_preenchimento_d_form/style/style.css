@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: aqua;
+    text-align: center;
+}
+
+.enviar {
+    color: rgba(255, 0, 0, 0.614);
+}
+
+.enviar a:hover {
+    color: blue;
+}
