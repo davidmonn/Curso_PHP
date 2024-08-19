@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: block;
+    background: red;
+}
+
+#container {
+    background-color: aliceblue;
+    margin: auto;
+    width: 750px;
+    padding-top: 50px;
+}
+
+#container > form {
+    margin: auto;
+    padding: auto;
+}
