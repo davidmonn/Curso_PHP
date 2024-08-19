@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgba(238, 130, 238, 0.614);
+    color: brown;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.file {
+    padding: 5px;
+}
+.file > input {
+    color: rebeccapurple;
+}
+.enviar {
+    padding: 5px;
+}
+
+.enviar > input {
+    color: rebeccapurple;
+    padding: 3px;
+}
