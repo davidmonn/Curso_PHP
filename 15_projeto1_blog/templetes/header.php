@@ -20,17 +20,19 @@
             <img src="<?= $BASE_URL ?>/imagens/logo.svg" alt="Blog Codar">
         </a>
         <nav> <!-- TAG DE NAVEGACAO -->
-            <li>
-                <a href="<?= $BASE_URL ?>">HOME</a>
-            </li>
-            <li>
-                <a href="#">Categorias</a>
-            </li>
-            <li>
-                <a href="#">Sobre</a>
-            </li>
-            <li>
-                <a href="<?= $BASE_URL ?>contato.php">Contato</a>
-            </li>
+            <ul id="navbar">
+                <li>
+                    <a href="<?= $BASE_URL ?>" class="nav-link">HOME</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">Categorias</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">Sobre</a>
+                </li>
+                <li>
+                    <a href="<?= $BASE_URL ?>contato.php" class="nav-link">Contato</a>
+                </li>
+            </ul>
         </nav>
     </header>
