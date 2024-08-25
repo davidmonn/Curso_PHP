@@ -28,7 +28,7 @@
                     <a href="<?= $BASE_URL ?>" class="nav-link">HOME</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">Categorias</a>
+                    <a href="<?= $BASE_URL?>categorias.php?" class="nav-link">Categorias</a>
                 </li>
                 <li>
                     <a href="#" class="nav-link">Sobre</a>
