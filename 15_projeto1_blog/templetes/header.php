@@ -1,5 +1,7 @@
 <?php
     include_once("helpers/url.php");
+    include_once("data/posts.php"); /* Com esses dois datas, teremos acesso a esses dados em qualquer lugar de nosso site */
+    include_once("data/categories.php");
 ?>
 
 <!DOCTYPE html>

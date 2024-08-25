@@ -7,7 +7,7 @@
     box-sizing: border-box; /* Deixa todos os elementos com o limite da borda correto, pois alguns elementos pega outros limites e ficam maiores que os outros, com isso padronizamos tudo */
 }
 
-hmtl {
+html { /* Para deixar o rodape sempre no final*/
   min-height: 100vh;
   position: relative;
 }
@@ -60,7 +60,7 @@ main {
 footer {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   text-align: center;
   background: #000;
   color: #fff;
