@@ -10,10 +10,10 @@
         <div id="posts-container">
             <?php foreach($posts as $post): ?>
                 <div class="post-box">
-                    <img src="<?= $BASE_URL ?>/imagens/<?= $post['img']?>" alt="<? $post['title'] ?>">
+                    <img src="<?= $BASE_URL ?>/imagens/<?= $post['img']?>" alt="<?= $post['title'] ?>">
                     <h2 class="post-title">
                         <!-- Em nosso a href=" $BASE_URL, estamos criando uma url para o post individual" -->
-                        <a href="<?= $BASE_URL?>post.php?id=<? $post['id']?>"><?= $post['title']?></a>
+                        <a href="<?= $BASE_URL?>post.php?id=<?= $post['id']?>"><?= $post['title']?></a>
                     </h2>
                     <p class="post-descripition"><?= $post['description']?></p>
                     <div class="tags-container">
