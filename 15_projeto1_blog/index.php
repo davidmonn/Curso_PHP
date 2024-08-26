@@ -7,7 +7,7 @@
             <h1>Blog Codar</h1>
             <p>O seu blog de programação</p>
         </div>
-        <div class="posts-container">
+        <div id="posts-container">
             <?php foreach($posts as $post): ?>
                 <div class="post-box">
                     <img src="<?= $BASE_URL ?>/imagens/<?= $post['img']?>" alt="<? $post['title'] ?>">
