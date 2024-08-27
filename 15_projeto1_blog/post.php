@@ -31,8 +31,7 @@
             Neque id odit perferendis illum itaque deserunt voluptatum eum ducimus, recusandae eos excepturi repellat tenetur fugiat ea maiores similique harum exercitationem omnis placeat ratione, rerum expedita provident. Necessitatibus, delectus non.
             Quae sed fuga a cum, et cupiditate blanditiis illo totam! Reprehenderit pariatur nesciunt perspiciatis totam eveniet quo similique fuga deserunt, molestiae veritatis quis unde qui commodi iste ullam quibusdam? Soluta!</p>
         </div>
-    </main>
-    <aside id="nav-container">
+        <aside id="nav-container">
         <h3 id="tags-title">Tags</h3>
         <ul id="tag-list">
             <?php foreach($currentPost['tags'] as $tag): ?>
@@ -46,6 +45,7 @@
             <? endforeach; ?>
         </ul>
     </aside>
+    </main>
 
 <?php
     include_once("templetes/footer.php");

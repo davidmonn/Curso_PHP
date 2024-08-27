@@ -127,6 +127,82 @@ main {
   margin-right: 5px;
 }
 
+/* POST */
+
+#post-container {
+  display: grid; /* Define um layout em grade (grid). Um layout em grade (grid) é um sistema de design usado no CSS que permite organizar elementos da página em linhas e colunas. Imagine uma grade como uma tabela invisível, onde você pode colocar e posicionar elementos (como blocos de texto, imagens, etc.) em diferentes células dessa "tabela".*/
+  grid-template-columns: 75% 25%; /* Cria duas colunas: a primeira com 75% e a segunda com 25% da largura. */
+  grid-template-rows: auto; /* Altura das linhas ajustada automaticamente. */
+  grid-template-areas: "main sidebar"; /* Define duas áreas: 'main' e 'sidebar'. Você pode usar qualquer nome que desejar, mas "main" e "sidebar" são comuns porque refletem a estrutura típica de muitos layouts de sites. Eles não são obrigatórios, mas ajudam a manter o código organizado e compreensível. Criar áreas como "main" e "sidebar" em um layout de grid tem a ver com organizar o conteúdo da página de forma semântica e prática */
+  grid-gap: 10px; /* Espaçamento de 10px entre as colunas e linhas. */
+  padding-top: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 250px;
+}
+
+.content-container {
+  grid-area: main; /* Associa este bloco à área 'main' da grade. */
+}
+
+#main-title {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+#post-description {
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.post-content {
+  line-height: 1.8;
+  margin: 10px 0;
+}
+
+.img-container {
+  margin-bottom: 30px;
+}
+
+.img-container img {
+  width: 60%;
+}
+
+/* POST ASIDE */
+
+.nav-container {
+  grid-area: sidebar;
+}
+
+#tags-title, #categories-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: 300;
+  cursor: context-menu;
+}
+
+#tag-list, #categories-list {
+  list-style: none;
+
+}
+
+#tag-list li, #categories-list li {
+  margin-bottom: 10px;
+}
+
+#tag-list a, #categories-list a {
+  color: #666;
+  transition: 0.5s;
+}
+
+#tag-list a:hover, #categories-list a:hover {
+  color: #000;
+}
+
 /* FOOTER */
 
 footer {
