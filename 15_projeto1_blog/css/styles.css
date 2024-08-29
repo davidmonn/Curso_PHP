@@ -215,6 +215,49 @@ footer {
   padding: 50px 0;
 }
 
+/* MOBILE */
+
+@media(max-width: 480px) {
+  /* HOME */
+  header {
+    width: 100%;
+  }
+  
+  #logo {
+    display: block;
+    position: relative;
+    margin: 0 auto; 
+    left: 0; /* Estamos zerando esse valor para ele nao ficar meio pro lado, ja que mais acima usamos um left de 9.5 */
+    width: 50px;
+  }
+  #navbar {
+    display: none;
+  }
+  #title-container {
+    min-width: 100%;
+    margin-top: 20px;
+  }
+  #post-container {
+    margin-top: 20px;
+  }
+  .post-box {
+    flex: 100% 1 0; /* Sempre ira ocupar 100%, independente do post */
+    padding: 15px;
+    margin: 0;
+  }
+  /*POST*/
+  #post-container {
+    grid-template-columns: 100%; /* Nao tera mais as colunas divididas, agora as duas representam 100% */
+    padding: 15px;
+    grid-template-areas: "main"
+    "sidebar"; /* Com isso estamos fazendo com que um fique abaixo do outro */
+  }
+  .img-container img {
+    width: 100%;
+    
+  }
+}
+
 /*
 // <uniquifier>: Use a unique and descriptive class name
 // <weight>: Use a value from 100 to 900
