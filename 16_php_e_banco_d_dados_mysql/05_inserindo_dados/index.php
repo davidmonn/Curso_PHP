@@ -14,6 +14,7 @@
     $descricao = "É uma xicara usada de cor rosa";
     
     $q = "INSERT INTO $table (nome, descricao) VALUES ('$nome', '$descricao')"; // Para inserir algo nao podemos esquecer das aspas.
+    $delete = "DELETE FROM itens WHERE id=14;";
 
     $conn->query($q);
 
