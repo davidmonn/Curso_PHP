@@ -9,10 +9,20 @@
 
     // ASSUNTO DA AULA
 
-    $q = "nome * FROM itens ";
+    $q = "SELECT * FROM itens";
 
-    $conn->query($q);
-    print_r($conn);
+    $result = $conn->query($q);
+
     $conn->close();
+
+    // UM RESULTADO
+    $iteM = $result->fetch_assoc();
+
+    // TODOS OS RESULTADOS
+
+    $itens = $result->fetch_all();
+
+    print_r($itens);
+
 
 ?>
