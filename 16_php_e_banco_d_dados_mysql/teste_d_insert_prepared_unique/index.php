@@ -1,7 +1,7 @@
 <?php
 
     $host = "localhost";
-    $user = "root";
+    $user = "TesteDavid";
     $pass = "";
     $db = "cursophp";
 
@@ -11,6 +11,8 @@
     if($conn->connect_error) {
         die("Falha na conexao: ". $conn->connect_error);
     }
+
+    echo "Conexao bem sucedida <br>";
 
     // Inicio TESTE
 
