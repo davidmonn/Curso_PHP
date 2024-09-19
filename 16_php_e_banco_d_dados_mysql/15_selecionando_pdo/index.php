@@ -16,10 +16,10 @@
     //ASSUNTO DA AULA
 
     // INFORMACOES A SEREM PUXADAS DO BANCO
-    $idSelect = 5;
+    $idSelect = 9;
 
     // ESTRUTURA DE SELECAO
-    $stmt = $conn->prepare("SELECT * FROM teste2 WHERE id > :idSelect");
+    $stmt = $conn->prepare("SELECT * FROM teste2 WHERE id = :idSelect");
     $stmt->bindParam(":idSelect", $idSelect);
 
     if($stmt->execute()) {
