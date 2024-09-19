@@ -24,8 +24,8 @@
 
     if($stmt->execute()) {
         echo "Itens selecionados com sucesso: <br>";
-        $dadosSelect = $stmt->fetch(PDO::FETCH_ASSOC); // Usado para organizar o valor recebido em ASSOCIATIVO
-        print_r($dadosSelect);
+        //$dadosSelect = $stmt->fetch(PDO::FETCH_ASSOC); // Usado para organizar o valor recebido em ASSOCIATIVO
+        //print_r($dadosSelect);
         echo "<br> <br>";
         $teste2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
         print_r($teste2);
