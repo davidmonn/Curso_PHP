@@ -1,6 +1,7 @@
 <?php
 
     include_once("config/url.php");
+    include_once("config/process.php"); // Com isso sempre que iniciarmos a pagina, teremos o processamento de dados
 
 ?>
 
