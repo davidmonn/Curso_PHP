@@ -20,6 +20,38 @@
     background-color: #007BFF;
 }
 
+.actions i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.check-icon {
+    color: #1E7E34;
+}
+
+.edit-icon {
+    color: #007BFF;
+}
+
+.delete-icon {
+    color: #BB2130;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.col-id {
+    font-weight: bold;
+}
+
+.actions {
+    text-align: right;
+    width: 150px;
+}
+
 #empty-list-text {
     text-align: center;
 }
