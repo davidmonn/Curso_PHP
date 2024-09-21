@@ -5,6 +5,8 @@
     include_once("connection.php");
     include_once("url.php");
 
+    $contacts = [];
+
     // Primeira coisa que iremos fazer e puxar todos os dados da query
 
     $query = "SELECT * FROM contacts";
