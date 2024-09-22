@@ -96,3 +96,10 @@
     text-decoration: underline;
     color: red;
 }
+
+/*CRIAR DADOS*/
+#create-form,
+#edit-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
