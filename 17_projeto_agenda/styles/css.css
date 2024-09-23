@@ -103,3 +103,15 @@
     max-width: 500px;
     margin: 0 auto;
 }
+
+/* MOBILE */
+@media(max-width:480px) {
+    #home-link {
+        display: none;
+    }
+    #tel {
+        /*background-color: #007BFF;*/
+        width: 39%;
+        text-align: center;
+    }
+}
