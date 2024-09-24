@@ -31,6 +31,28 @@
                 echo "Erro: $erro";
             }
 
+            // ATUALIZAR CONTATO
+        } else if($data["type"] === "edit") {
+            $name = $data["name"]; // Pegar todos os dados novamente
+            $phone = $data["phone"];
+            $observations = $data["observations"];
+            $id = $data["id"]; // Usado para saber qual dados iremos atualizar
+
+            $query = "UPDATE contacts SET name = :name, phone = :phone, observations = :observations WHERE id = :id";
+
+            $stmt = $conn->prepare($query);
+            $stmt->bindParam(":name", $name);
+            $stmt->bindParam(":phone", $phone);
+            $stmt->bindParam(":observations", $observations);
+            $stmt->bindParam(":id", $id);
+
+            try {
+                $stmt->execute();
+                $_SESSION["msg"] = "Dados atualizados com sucesso!";
+            } catch(PDOException $e) {
+                $_SESSION["msg"] = "Erro ao atualizar dados, não pode haver numeros iguais.";
+            }
+
         }
 
         // REDIRECIONAR PARA HOME
