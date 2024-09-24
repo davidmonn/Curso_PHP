@@ -53,6 +53,20 @@
                 $_SESSION["msg"] = "Erro ao atualizar dados, não pode haver numeros iguais.";
             }
 
+        } else if($data["type"] === "delete") {
+            $id = $data["id"];
+            $query = "DELETE FROM contacts WHERE id = :id";
+            $stmt = $conn->prepare($query);
+            $stmt->bindParam(":id", $id);
+
+            try{
+                if($stmt->execute()){
+                    $_SESSION["msg"] = "Contato deletado com sucesso";
+                }
+            } catch(PDOException $e) {
+                $erro = $e->getMessage();
+                $_SESSION["msg"] = "Erro ao excluir contato: $erro";
+            }
         }
 
         // REDIRECIONAR PARA HOME

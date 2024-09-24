@@ -26,7 +26,11 @@
                             <td class="actions">
                                 <a href="<?= $BASE_URL ?>show.php?id=<?= $contact['id'] ?>" ><i class="fas fa-eye check-icon"></i></a>
                                 <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact['id'] ?>"><i class="far fa-edit edit-icon"></i></a>
-                                <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
+                                <form class="delete-form" action="<?= $BASE_URL ?>config/process.php" method="POST"> <!-- $BASE_URL para o nosso process.php -->
+                                    <input type="hidden" name="type" value="delete">
+                                    <input type="hidden" name="id" value="<?= $contact['id'] ?>"> <!-- Com isso teremos como mostrar para o PHP quem iremos deletar -->
+                                    <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>

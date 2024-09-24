@@ -37,6 +37,11 @@
     color: #BB2130;
 }
 
+/* DELETAR */
+.delete-form{
+    display: inline-block; /* Para ficar um ao lado do outro e nao quebrar linha */
+}
+
 .delete-btn {
     background-color: transparent;
     border: none;
