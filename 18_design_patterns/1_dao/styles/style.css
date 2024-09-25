@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    margin-top: 20px;
+    background-color: aqua;
+}
+
+h1 {
+    text-align: center;
+}
+
+#formulario {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cont-form {
+    padding: 5px;
+}
+
+#conteudo {
+    margin-top: 20px;
+    padding: 50px;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.514);
+}
+
+.btn {
+    padding: 3px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#footer {
+    margin-top: 50vh;
+    width: 100%;
+    background-color: black;
+}
+
+#rodape {
+    color: aqua;
+    padding: 5px;
+}
