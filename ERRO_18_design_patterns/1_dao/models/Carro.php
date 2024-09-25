@@ -1,6 +1,6 @@
 <?php
 
-    class Carros {
+    class CarrosDAO {
         // Todas estao privadas pois elas seram alteradas, via metodos.
         private $id;
         private $marca;
@@ -27,7 +27,7 @@
             $this->km;
         }
         public function setKm($km) {
-            $this->km = $km;
+            $this->km = intval($km);
         }
 
         public function getCor() {
@@ -38,8 +38,8 @@
         }
     }
 
-    interface CarDAO {
-        public function create(Carros $carros);// Dentro de seu parametro teremos um objeto da classe que estamos criando, estamos sempre mandando o carro para ser criado pois temos que ter o objeto completo
+    interface CarDAOInterface {
+        public function create(Car $car);// Dentro de seu parametro teremos um objeto da classe que estamos criando, estamos sempre mandando o carro para ser criado pois temos que ter o objeto completo
         public function findAll(); // Usado para resgatar todos os dados sem nenhum filtro
         
     }
