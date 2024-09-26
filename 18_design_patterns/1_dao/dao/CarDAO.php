@@ -14,6 +14,27 @@
 
         public function findAll() {
 
+            $cars = [];
+      
+            $stmt = $this->conn->query("SELECT * FROM carros");
+      
+            $data = $stmt->fetchAll();
+      
+            foreach($data as $item) {
+      
+              $car = new Car();
+      
+              $car->setId($item["id"]);
+              $car->setMarca($item["marca"]);
+              $car->setKm($item["km"]);
+              $car->setCor($item["cor"]);
+      
+              $cars[] = $car;
+      
+            }
+      
+            return $cars;
+      
         }
 
         public function create(Car $car) {

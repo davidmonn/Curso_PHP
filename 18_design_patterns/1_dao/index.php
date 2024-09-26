@@ -1,6 +1,12 @@
 <?php
-    include_once("db.php");
-    include_once("templates/header.php");
+
+  include_once("db.php");
+  include_once("dao/CarDAO.php");
+
+  $carDao = new CarDao($conn);
+
+  $cars = $carDao->findAll();
+
 ?>
 
 <h1>Insira um carro:</h1>
@@ -21,6 +27,11 @@
         <input class="btn" type="submit" value="Salvar">
         <input class="btn" type="reset" value="Limpar">
     </form>
+    <ul id="result">
+        <?php foreach($cars as $car): ?>
+            <li class="colun"><?= $car->getMarca() ?> - <?= $car->getKm() ?> - <?= $car->getCor() ?></li>
+        <?php endforeach; ?>
+    </ul>
 </div>
 
 <?php
