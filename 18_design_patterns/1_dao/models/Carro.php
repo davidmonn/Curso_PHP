@@ -1,6 +1,8 @@
 <?php
 
-    class CarrosDAO {
+    //Aqui temos as classe que definem os metodos basicos para podermos manusear o objeto
+
+    class Car {
         // Todas estao privadas pois elas seram alteradas, via metodos.
         private $id;
         private $marca;
@@ -17,21 +19,21 @@
         }
 
         public function getMarca() {
-            $this->marca;
+            return $this->marca;
         }
         public function setMarca($marca) {
             $this->marca = $marca;
         }
 
         public function getKm() {
-            $this->km;
+            return $this->km;
         }
         public function setKm($km) {
             $this->km = intval($km);
         }
 
         public function getCor() {
-            $this->cor;
+            return $this->cor;
         }
         public function setCor($cor) {
             $this->cor = $cor;
@@ -41,5 +43,4 @@
     interface CarDAOInterface {
         public function create(Car $car);// Dentro de seu parametro teremos um objeto da classe que estamos criando, estamos sempre mandando o carro para ser criado pois temos que ter o objeto completo
         public function findAll(); // Usado para resgatar todos os dados sem nenhum filtro
-        
     }

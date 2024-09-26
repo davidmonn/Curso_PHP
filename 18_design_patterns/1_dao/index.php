@@ -11,8 +11,8 @@
             <input type="text" name="marca" placeholder="Insira a marca do carro:">
         </div class="cont-form">
         <div>
-            <label for="km">Kilometragem:</label>
-            <input type="text" name="km" placeholder="Insira a kilometragem:">
+            <label for="km">Quilometragem:</label>
+            <input type="text" name="km" placeholder="Insira a Quilometragem:">
         </div>
         <div class="cont-form">
             <label for="cor">Cor do carro:</label>

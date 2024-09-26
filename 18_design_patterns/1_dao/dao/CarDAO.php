@@ -1,8 +1,10 @@
 <?php
 
+    // Aqui iremos receber o objeto pronto e sera inserido no banco
+
     include_once("models/Carro.php"); // Inclui a definição da classe Carro para permitir sua manipulação no CarDAO.php
 
-    class CarrosDAO implements CarDAOInterface {
+    class CarDAO implements CarDAOInterface {
 
         private $conn;
 
