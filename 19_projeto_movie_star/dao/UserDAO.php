@@ -3,18 +3,15 @@
     require_once("models/User.php");
 
     class UserDAO implements UserDAOInterface{
+
+        private $conn;
+        private $url;
+
+        public function __construct(PDO $conn, $url) {
+            $this->conn = $conn;
+            $this->url = $url;
+          }
         public function buildUser($data) {
-
-            private $conn;
-            private $url;
-
-            public function __construct(PDO $conn, $url) {
-                $this-conn = $conn; // Aqui estamos chamando nossa conexao
-                $this->url = $url; // Aqui estamos chamando nossa $BASE_URL
-            }
-
-        }
-        public function create(User $user, $authUser = false) {
             $user = new User();
             $user->id = $data["id"]; // Iremos receber o array e transformar em objeto.
             $user->name = $data["lastname"];
@@ -25,6 +22,9 @@
             $user->token = $data["token"];
 
             return $user; // Ira retornar para quem chamar 
+        }
+        public function create(User $user, $authUser = false) {
+
         }
         public function update(User $user) {
 
