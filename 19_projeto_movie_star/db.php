@@ -5,7 +5,7 @@
     $db_pass = "";
 
     /* CONEXAO */
-    $conn = new PDO("mysql: name=" . $db_name . ";host=" . $db_host, $db_user, $db_pass);
+    $conn = new PDO("mysql:dbname=" . $db_name . ";host=" . $db_host, $db_user, $db_pass);
 
     /* HABILITAR ERROS */
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
