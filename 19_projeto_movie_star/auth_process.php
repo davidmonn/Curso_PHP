@@ -38,7 +38,7 @@
                     $user->name = $name;
                     $user->lastname = $lastname;
                     $user->email = $email;
-                    $user->password = $finalpassword;
+                    $user->password = $finalPassword;
                     $user->token = $userToken;
 
                     // Autenticar o usuario
