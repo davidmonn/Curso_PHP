@@ -12,6 +12,14 @@
         public $bio;
         public $token;
 
+        public function generateToken() {
+            return bin2hex(random_bytes(50)); // Funcao para retornar uma string e random_bytes outra string que ira nos retornar 50 caracteres
+        }
+
+        public function generatePassword($password) {
+            return password_hash($password, PASSWORD_DEFAULT);
+        }
+
     }
 
     interface UserDAOInterface {
