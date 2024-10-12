@@ -32,6 +32,7 @@
         public function findByEmail($email); // Poderemos encontrar o usuario por email.
         public function findById($id); // Encontrar o usuario pelo id.
         public function findByToken($token); // Receber o token, pode ser encontrado o usuario por seu token
+        public function destroyToken();
         public function changePassword(User $user); // Para o usuario poder fazer a troca da senha
     }
 
