@@ -45,7 +45,7 @@
             }
         }
         public function update(User $user) {
-
+            
         }
         public function verifyToken($protected = false) {
             if(!empty($_SESSION["token"])) {
@@ -83,7 +83,31 @@
             }
         }
         public function authenticateUser($email, $password) {
+            // Preenche o objeto user
+            $user = $this->findByEmail($email);
+            if($user) { 
 
+                // Checar se as senhas batem
+                if(password_verify($password, $user->password)) {
+
+                    // Gerar um token e inserir na session
+                    $token = $user->generateToken();
+                    $this->setTokenToSession($token);
+
+                    // Atualizar token no usuario
+                    $user->token = $token;
+
+                    $this->update($user);
+
+                    return true;
+
+                } else {
+                    return false;
+                }
+
+            } else {
+                return false;
+            }
         }
         public function findByEmail($email) {
 

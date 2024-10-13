@@ -60,6 +60,22 @@
         }
 
     } else if($type === "login") {
+        $email = filter_input(INPUT_POST, "email");
+        $password = filter_input(INPUT_POST, "password");
+
+        // Tenta autenticar usuario
+        if($userDao->authenticateUser($email, $password)) {
+
+        // Redireciona o usuario, caso nao conseguir autenticar
+        } else {
+
+            $message->setMessage("Usuario ou senha, invalidos. ", "error " , "back");
+
+        }
+
+    } else {
+
+        $message->setMessage("Informações invalidas. ", "error " , "index.php");
 
     }
 
