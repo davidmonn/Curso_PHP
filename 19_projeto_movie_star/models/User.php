@@ -25,7 +25,7 @@
     interface UserDAOInterface {
         public function buildUser($data);
         public function create(User $user, $authUser = false);
-        public function update(User $user);
+        public function update(User $user, $redirect = true);
         public function verifyToken($protected = false); // False pois iremos poder deixar algumas rotas protegidas, o colocando como false, queremos dizer que conseguimos verificar o usuario mas a rota nao e protegida, entao o redirecionamos caso o usuario nao esteja logado.
         public function setTokenToSession($token, $redirect = true); // Login, com isso iremos redirecionar o usuario para alguma pagina especifica.
         public function authenticateUser($email, $password); // Com esses dois conjuntos e feito a autenticacao completa.
