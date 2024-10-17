@@ -19,7 +19,7 @@ require_once("templates/header.php");
                     </div>
                     <div class="btn card-btn">
                         <input type="submit" class="btn card-btn" value="Entrar">
-                        <input type="reset" class="btn card-btn" value="Limpar">
+                        <!--<input type="reset" class="btn card-btn" value="Limpar">-->
                     </div>
                 </form>
             </div>
@@ -49,7 +49,7 @@ require_once("templates/header.php");
                     </div>
                     <div class="btn card-btn">
                         <input type="submit" value="Registrar" class="btn-btn">
-                        <input type="reset" value="Limpar" class="btn-btn">
+                        <!--<input type="reset" value="Limpar" class="btn-btn">-->
                     </div>
                 </form>
             </div>

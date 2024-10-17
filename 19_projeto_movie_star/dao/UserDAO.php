@@ -17,7 +17,8 @@
         public function buildUser($data) {
             $user = new User();
             $user->id = $data["id"]; // Iremos receber o array e transformar em objeto.
-            $user->name = $data["lastname"];
+            $user->name = $data["name"];
+            $user->lastname = $data["lastname"];
             $user->email = $data["email"];
             $user->password = $data["password"];
             $user->image = $data["image"];
@@ -27,24 +28,27 @@
             return $user; // Ira retornar para quem chamar 
         }
         public function create(User $user, $authUser = false) {
-            // Criacao de usuario
+
             $stmt = $this->conn->prepare("INSERT INTO users(
                 name, lastname, email, password, token
-            ) VALUES (
+              ) VALUES (
                 :name, :lastname, :email, :password, :token
-            )");
+              )");
       
             $stmt->bindParam(":name", $user->name);
             $stmt->bindParam(":lastname", $user->lastname);
             $stmt->bindParam(":email", $user->email);
             $stmt->bindParam(":password", $user->password);
             $stmt->bindParam(":token", $user->token);
-
-            // Autenticar usuario, caso auth seja true
+      
+            $stmt->execute();
+      
+            // Autenticar usuário, caso auth seja true
             if($authUser) {
-                $this->setTokenToSession($user->token);
+              $this->setTokenToSession($user->token);
             }
-        }
+      
+          }
         public function update(User $user, $redirect = true) {
 
             $stmt = $this->conn->prepare("UPDATE users SET 
@@ -88,14 +92,14 @@
                 } else if($protected) {
 
                 // redireciona usuario não autenticado
-                $this->message->setMessage("Faça a autenticação para acessar está página, ", "error", "index.php");
+                $this->message->setMessage("Faça a autenticação para acessar está página. ", "error", "index.php");
 
                 }
 
             } else if($protected) {
 
                 // redireciona usuario não autenticado
-                $this->message->setMessage("Faça a autenticação para acessar está página, ", "error", "index.php");
+                $this->message->setMessage("Faça a autenticação para acessar está página. ", "error", "index.php");
 
             }
         }
@@ -106,7 +110,7 @@
             if($redirect) {
 
                 // redireciona para o perfil do usuario
-                $this->message->setMessage("Seja bem-vindo, ", "success", "editprofile.php");
+                $this->message->setMessage("Seja bem-vindo! ", "success", "editprofile.php");
                 
             }
         }
