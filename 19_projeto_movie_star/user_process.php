@@ -34,6 +34,38 @@ if($type === "update") {
     $userData->email = $email;
     $userData->bio = $bio;
 
+    //Upload da imagem
+    if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
+        
+        $image = $_FILES["image"];
+        $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
+        $jpegArray = ["image/jpeg", "image/jpg"];
+
+        // Checagem de tipo de imagem
+        if(in_array($image["type"], $imageTypes)) {
+
+            // Testar se e jpeg
+            if(in_array($image, $jpegArray)) {
+
+                $imageFile = imagecreatefromjpeg($image["tmp_name"]);
+
+            // Imagem e png
+            } else {
+                $imageFile = imagecreatefrompng($image["tmp_name"]);
+            }
+
+            $imageName = $user->imageGenerateName();
+
+            imagejpeg($imageFile, "./img/users/" . $imageName, 100);
+
+            $userData->image = $imageName;
+
+        } else {
+            $message->setMessage("Tipo de imagem invalida, insira png ou jpg. ", "error " , "back");
+        }
+
+    }
+
     $userDao->update($userData);
 
     // Atualizar senha do usuario
