@@ -71,6 +71,31 @@ if($type === "update") {
     // Atualizar senha do usuario
 } else if($type === "changepassword") {
 
+    // Receber dados do post
+    $password = filter_input(INPUT_POST, "password");
+    $confirmpassword = filter_input(INPUT_POST, "confirmpassword");
+
+    // Resgatar dados do usuario
+    $userData = $userDao->verifyToken();
+    
+    $id = $userData->id;
+
+    if($password == $confirmpassword) {
+
+        // Criar um novo objeto de usuario
+        $user = new User();
+
+        $finalPassword = $user->generatePassword($password);
+
+        $user->password = $finalPassword;
+        $user->id = $id;
+
+        $userDao->changePassword($user);
+
+    } else {
+        $message->setMessage("Senhas nao correspondem, por favor insira senhas iguais no campo. ", "error " , "back");
+    }
+
 } else {
     // Manda usuario malicioso para index
     $message->setMessage("Informações invalidas. ", "error " , "index.php");
