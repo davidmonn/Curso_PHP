@@ -26,8 +26,8 @@
     public function getMoviesByUsersId($id);
     public function findById($id);
     public function findByTitle($title);
-    public function create($movie);
-    public function update($movie);
-    public function destroyd($id);
+    public function create(Movie $movie);
+    public function update(Movie $movie);
+    public function destroy($id);
 
   }

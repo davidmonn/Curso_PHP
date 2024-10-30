@@ -1,80 +1,75 @@
 <?php
-    
-    require_once("globals.php");
-    require_once("db.php");
-    require_once("models/Movie.php");
-    require_once("models/Message.php");
-    require_once("dao/UserDAO.php");
-    require_once("dao/MovieDAO.php");
 
-    $message = new Message($BASE_URL);
-    $userDao = new UserDAO($conn, $BASE_URL);
+  require_once("globals.php");
+  require_once("db.php");
+  require_once("models/Movie.php");
+  require_once("models/Message.php");
+  require_once("dao/UserDAO.php");
+  require_once("dao/MovieDAO.php");
 
-    // Resgata o tipo do formulario
-    $type = filter_input(INPUT_POST, "type"); // Filtra o dado recebido para evitar conteúdo malicioso, usado para determinar o destino do arquivo.
+  $message = new Message($BASE_URL);
+  $userDao = new UserDAO($conn, $BASE_URL);
+  $movieDao = new MovieDAO($conn, $BASE_URL);
 
-    // Resgatar dados do usuario / Ira servir para verificar se o usuario esta logado
-    $userData = $userDao->verifyToken();
+  // Resgata o tipo do formulário
+  $type = filter_input(INPUT_POST, "type");
 
-    if($type === "create") {
+  // Resgata dados do usuário
+  $userData = $userDao->verifyToken();
 
-        // Receber os dados dos inputs
-        $title = filter_input(INPUT_POST, "title");
-        $description = filter_input(INPUT_POST, "description");
-        $trailer = filter_input(INPUT_POST, "trailer");
-        $category = filter_input(INPUT_POST, "category");
-        $length = filter_input(INPUT_POST, "length");
+  if($type === "create") {
 
-        $movie = new Movie();
+    // Receber os dados dos inputs
+    $title = filter_input(INPUT_POST, "title");
+    $description = filter_input(INPUT_POST, "description");
+    $trailer = filter_input(INPUT_POST, "trailer");
+    $category = filter_input(INPUT_POST, "category");
+    $length = filter_input(INPUT_POST, "length");
 
-        // Validacao minima de dados
-        if(!empty($title) && !empty($description) && !empty($category)) {
+    $movie = new Movie();
 
-            $movie->title = $title;
-            $movie->description = $description;
-            $movie->trailer = $trailer;
-            $movie->category = $category;
-            $movie->length = $length;
+    // Validação mínima de dados
+    if(!empty($title) && !empty($description) && !empty($category)) {
 
-            // Upload de imagem do filme
-            if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
+      $movie->title = $title;
+      $movie->description = $description;
+      $movie->trailer = $trailer;
+      $movie->category = $category;
+      $movie->length = $length;
+      $movie->users_id = $userData->id;
 
-                $image = $_FILES["image"];
-                $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
-                $jpegArray = ["image/jpeg", "image/jpg"];
+      // Upload de imagem do filme
+      if(isset($_FILES["image"]) && !empty($_FILES["image"]["tmp_name"])) {
 
-                // Checando tipo da imagem
-                if(in_array($image["type"], $imageTypes)) {
+        $image = $_FILES["image"];
+        $imageTypes = ["image/jpeg", "image/jpg", "image/png"];
+        $jpgArray = ["image/jpeg", "image/jpg"];
 
-                //Checa se imagem e jpeg  
-                if(in_array($image["type"], $jpegArray)) {
-                    $imageFile = imagecreatefromjpeg($image["tmp_name"]);
-                } else {
-                    $imageFile = imagecreatefrompng($image["tmp_name"]);
-                }
+        // Checando tipo da imagem
+        if(in_array($image["type"], $imageTypes)) {
 
-                //Gerando nome da imagem
-                $imageName = $movie->imageGenerateName();
+          // Checa se imagem é jpg
+          if(in_array($image["type"], $jpgArray)) {
+            $imageFile = imagecreatefromjpeg($image["tmp_name"]);
+          } else {
+            $imageFile = imagecreatefrompng($image["tmp_name"]);
+          }
 
-                imagejpeg($imageFile, "./img/movies/" . $imageName, 100);
+          // Gerando o nome da imagem
+          $imageName = $movie->imageGenerateName();
 
-                $movie->image = $imageName;
-    
-                }else {
+          imagejpeg($imageFile, "./img/movies/" . $imageName, 100);
 
-                    $message->setMessage("Tipo de imagem invalida, insira png ou jpg. ", "error " , "back");
-                    
-                }
-            }
-
-            $movieDao->create($movie);
+          $movie->image = $imageName;
 
         } else {
-            $message->setMessage("Por favor, adicione: Título, descricao e categoria. ", "error " , "back");
+
+          $message->setMessage("Tipo inválido de imagem, insira png ou jpg!", "error", "back");
+
         }
 
-    } else {
+      }
 
-        $message->setMessage("Informações invalidas. ", "error " , "index.php");
-
+      $movieDao->create($movie);
     }
+  }
