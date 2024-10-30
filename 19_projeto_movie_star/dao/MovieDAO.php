@@ -47,10 +47,19 @@
 
       $stmt->execute();
 
-      if()
+      if($stmt->rowCount() > 0) {
+
+        $moviesArray = $stmt->fetchAll();
+
+        foreach($moviesArray as $movie) {
+          $movies[] = $this->buildMovie($movie);
+        }
+
+      }
+
+      return $movies;
 
     }
-
     public function getMoviesByCategory($category) {
 
     }
