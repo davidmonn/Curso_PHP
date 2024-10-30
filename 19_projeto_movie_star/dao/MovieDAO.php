@@ -41,6 +41,14 @@
 
     public function getLatestMovies() {
 
+      $movies = [];
+
+      $stmt = $this->conn->query("SELECT * FROM movies ORDER BY id DESC");
+
+      $stmt->execute();
+
+      if()
+
     }
 
     public function getMoviesByCategory($category) {
