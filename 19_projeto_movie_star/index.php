@@ -8,27 +8,43 @@
 
     $latestMovies = $movieDao->getLatestMovies();
 
-    $actionMovies = [];
+    $actionMovies = $movieDao->getMoviesByCategory("Ação");
 
-    $animationMovies = [];
+    $animationMovies = $movieDao->getMoviesByCategory("Animação");
 ?>
 
-    <div id="main-container" class="container-fluid">
-        <h2 class="section-title">Filmes novos</h2>
-        <p class="section-description">Veja as criticas dos ultimos filmes adicionados no MovieStar</p>
-        <div class="movies-container">
-            <?php foreach($latestMovies as $movie): ?>
-                <?php require("templates/movie_card.php"); ?>
-            <? endforeach; ?>
-        </div>
-        <h2 class="section-title">Ação</h2>
-        <p class="section-description">Veja os melhores filmes de ação.</p>
-        <div class="movies-container"></div>
-            
-        <h2 class="section-title">Filmes novos</h2>
-        <p class="section-description">Veja as melhores animações.</p>
-        <div class="movies-container"></div>
+<div id="main-container" class="container-fluid">
+    <h2 class="section-title">Filmes novos</h2>
+    <p class="section-description">Veja as críticas dos últimos filmes adicionados no MovieStar</p>
+    <div class="movies-container">
+      <?php foreach($latestMovies as $movie): ?>
+        <?php require("templates/movie_card.php"); ?>
+      <?php endforeach; ?>
+      <?php if(count($latestMovies) === 0): ?>
+        <p class="empty-list">Ainda não há filmes cadastrados.</p>
+      <?php endif; ?>
     </div>
+    <h2 class="section-title">Ação</h2>
+    <p class="section-description">Veja os melhores filmes de ação</p>
+    <div class="movies-container">
+      <?php foreach($actionMovies as $movie): ?>
+        <?php require("templates/movie_card.php"); ?>
+      <?php endforeach; ?>
+      <?php if(count($actionMovies) === 0): ?>
+        <p class="empty-list">Ainda não há filmes de ação adicionados.</p>
+      <?php endif; ?>
+    </div>
+    <h2 class="section-title">Animação</h2>
+    <p class="section-description">Veja as melhores animações adicionados.</p>
+    <div class="movies-container">
+      <?php foreach($animationMovies as $movie): ?>
+        <?php require("templates/movie_card.php"); ?>
+      <?php endforeach; ?>
+      <?php if(count($animationMovies) === 0): ?>
+        <p class="empty-list">Ainda não há filmes de Animação adicionados.</p>
+      <?php endif; ?>
+    </div>
+  </div>
 
 <?php
     require_once("templates/footer.php");
