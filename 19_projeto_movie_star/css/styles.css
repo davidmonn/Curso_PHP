@@ -233,7 +233,9 @@
 #change-password-container {
     margin-top: 30px;
 }
-.edit-profile-page .card-btn{
+.edit-profile-page .card-btn,
+#add-movie-contaier .card-btn
+{
     width: auto;
 }
 
