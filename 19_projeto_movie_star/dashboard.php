@@ -15,7 +15,7 @@
       <h2 class="section-title">Dashboard</h2>
       <p class="section-description">Adicione ou atualize as informações de seus filmes enviados.</p>
       <div class="col md-12" id="movies-dashboard">
-        <div class="col md-12" id="add-movie-contaier">
+        <div class="col md-12" id="add-movie-container">
             <a href="<?= $BASE_URL ?>newmovie.php" class="btn card-btn">
                 <i class="fas fa-plus"></i> Adicionar filme
             </a>
