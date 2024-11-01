@@ -328,6 +328,7 @@
 .delete-btn {
     background-color: #DC3545;
     color: #FFF;
+    margin-top: 8px;
 }
 
 .delete-btn:hover {
