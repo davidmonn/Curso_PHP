@@ -12,7 +12,7 @@
   
     $userData = $userDao->verifyToken(true);
 
-    $userMovies = $movieDao->getMoviesByUsersId($userData->id);
+    $userMovies = $movieDao->getMoviesByUserId($userData->id);
 
 ?>
 
