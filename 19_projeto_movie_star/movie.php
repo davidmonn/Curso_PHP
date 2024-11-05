@@ -31,5 +31,21 @@
     }
 
   }
+
+  // Checar se o filme e do usuario
+  $userOwnsMovie = false;
+
+  if(!empty($userData)) {
+
+    if($userData->id === $movie->users_id) {
+
+      $userOwnsMovie = true;
+
+    }
+
+  }
+
+  // Resgatar as Reviews dp filme
+
   
 ?>
