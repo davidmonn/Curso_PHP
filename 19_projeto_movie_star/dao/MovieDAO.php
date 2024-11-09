@@ -125,7 +125,7 @@
 
         $movieData = $stmt->fetch();
 
-        $this->buildMovie($movieData);
+        $movie = $this->buildMovie($movieData);
 
         return $movie;
 
