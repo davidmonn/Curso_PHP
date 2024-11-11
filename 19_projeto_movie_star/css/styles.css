@@ -246,7 +246,9 @@
 
 .edit-profile-page .card-btn,
 #add-movie-container .card-btn,
-#review-form .card-btn {
+#review-form .card-btn,
+#edit-movie-form .card-btn
+{
     width: auto;
 }
 

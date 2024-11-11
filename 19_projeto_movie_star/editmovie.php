@@ -73,12 +73,11 @@
                     <label for="description">Descrição: </label>
                     <textarea name="description" id="description" rows="5" class="form-control" placeholder="Insira descrição para o filme:"><?= $movie->description ?></textarea>
                 </div>
-                <input type="submit" class="btn card-btn" value="Adicionar filme">
+                <input type="submit" class="btn card-btn" value="Editar filme">
                 </form>
             </div>
             <div class="col-md-3">
                 <div class="movie-image-container" style="background-image: url('<?= $BASE_URL ?>img/movies/<?= $movie->image ?>');">
-
                 </div>
             </div>
         </div>
