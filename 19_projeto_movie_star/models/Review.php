@@ -15,7 +15,7 @@ class Review {
 
     public function buildReview($data);
     public function create(Review $review);
-    public function getMoviesReviews($id); /*Para saber todas as notas e criticas de um filme*/
+    public function getMoviesReview($id); /*Para saber todas as notas e criticas de um filme*/
     public function hasAlreadyReviewed($id, $userId);
     public function getRatings($id);
 

@@ -5,57 +5,90 @@
     require_once("dao/UserDAO.php");
 
    class ReviewDAO implements ReviewDAOInterface {
+    
+    private $conn;
+    private $url;
+    private $message;
+    
+    public function __construct(PDO $conn, $url) {
+      $this->conn = $conn;
+      $this->url = $url;
+      $this->message = new Message($url);
+    }
 
-      private $conn;
-      private $url;
-      private $message;
+    public function buildReview($data){ 
+
+      $reviewObject = new Review();
+
+      $reviewObject->id = $data["id"];
+      $reviewObject->rating = $data["rating"];
+      $reviewObject->review = $data["review"];
+      $reviewObject->users_id = $data["users_id"];
+      $reviewObject->movies_id = $data["movies_id"];
       
-      public function __construct(PDO $conn, $url) {
-        $this->conn = $conn;
-        $this->url = $url;
-        $this->message = new Message($url);
+      return $reviewObject;
+
+    }
+    public function create(Review $review) {
+
+      $stmt = $this->conn->prepare("INSERT INTO reviews (
+        rating, review, movies_id, users_id
+      ) VALUES (
+        :rating, :review, :movies_id, :users_id
+      )");
+
+      $stmt->bindParam(":rating", $review->rating);
+      $stmt->bindParam(":review", $review->review);
+      $stmt->bindParam(":movies_id", $review->movies_id);
+      $stmt->bindParam(":users_id", $review->users_id);
+
+      $stmt->execute();
+
+      // Mensagem de sucesso por adicionar filme
+      $this->message->setMessage("Comentario adicionado com sucesso!", "success", "back");
+
+    }
+    public function getMoviesReview($id) { /*Para saber todas as notas e criticas de um filme*/
+
+      $reviews = [];
+
+      $stmt = $this->conn->prepare("SELECT * FROM reviews WHERE movies_id = :movies_id");
+
+      $stmt->bindParam(":movies_id", $id);
+
+      $stmt->execute();
+
+      if($stmt->rowCount() > 0) {
+
+        $reviewsData = $stmt->fetchAll();
+
+        $userDao = new UserDao($this->conn, $this->url);
+
+        foreach($reviewsData as $review) {
+
+          $reviewObject = $this->buildReview($review);
+
+          // Chamar dados do usuário
+          $user = $userDao->findById($reviewObject->users_id);
+
+          $reviewObject->user = $user;
+
+          $reviews[] = $reviewObject;
+        }
+
       }
 
-      public function buildReview($data){ 
+      return $reviews;
 
-        $reviewObject = new Review();
+    }
 
-        $reviewObject->id = $data["id"];
-        $reviewObject->rating = $data["rating"];
-        $reviewObject->review = $data["review"];
-        $reviewObject->users_id = $data["users_id"];
-        $reviewObject->movies_id = $data["movies_id"];
-        
-        return $reviewObject;
+    public function hasAlreadyReviewed($id, $userId){ 
 
-      }
-      public function create(Review $review) {
+    }
 
-        $stmt = $this->conn->prepare("INSERT INTO reviews (
-          rating, review, movies_id, users_id
-        ) VALUES (
-          :rating, :review, :movies_id, :users_id
-        )");
-  
-        $stmt->bindParam(":rating", $review->rating);
-        $stmt->bindParam(":review", $review->review);
-        $stmt->bindParam(":movies_id", $review->movies_id);
-        $stmt->bindParam(":users_id", $review->users_id);
-  
-        $stmt->execute();
-  
-        // Mensagem de sucesso por adicionar filme
-        $this->message->setMessage("Comentario adicionado com sucesso!", "success", "back");
-  
-      }
-      public function getMoviesReviews($id) { /*Para saber todas as notas e criticas de um filme*/
+    public function getRatings($id){ 
 
-      }
-      public function hasAlreadyReviewed($id, $userId){ 
+    }
 
-      }
-      public function getRatings($id){ 
-
-      }
-
-   }
+    
+}
