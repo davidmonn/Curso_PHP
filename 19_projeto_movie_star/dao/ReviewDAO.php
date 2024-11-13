@@ -4,7 +4,7 @@
     require_once("models/Message.php");
     require_once("dao/UserDAO.php");
 
-   class ReviewDao implements ReviewDAOInterface {
+   class ReviewDAO implements ReviewDAOInterface {
 
       private $conn;
       private $url;
