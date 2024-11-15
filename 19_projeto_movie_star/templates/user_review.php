@@ -20,7 +20,7 @@
            </div>
            <div class="col-md-9 author-details-container">
               <h4 class="author-name">
-                  <a href="<?= $BASE_URL ?>profile.php?id=<?= $review->users_id ?>"><?= $fullName ?></a> <!-- Corrigir o link -->
+                  <a href="<?= $BASE_URL ?>profile.php?id=<?= $review->user->id ?>"><?= $fullName ?></a> <!-- Corrigir o link -->
               </h4>
               <p><i class="fas fa-star"></i><?= $review->rating  ?></p>
            </div>

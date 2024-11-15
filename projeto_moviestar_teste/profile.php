@@ -4,52 +4,73 @@
   // Verifica se usuário está autenticado
   require_once("models/User.php");
   require_once("dao/UserDAO.php");
+  require_once("dao/MovieDAO.php");
 
   $user = new User();
-  $userDao = new UserDao($conn, $BASE_URL);
+  $userDao = new UserDAO($conn, $BASE_URL);
+  $movieDao = new MovieDAO($conn, $BASE_URL);
 
-  $userData = $userDao->verifyToken(true);
+  // Receber id do usuário
+  $id = filter_input(INPUT_GET, "id");
+
+  if(empty($id)) {
+
+    if(!empty($userData)) {
+
+      $id = $userData->id;
+
+    } else {
+
+      $message->setMessage("Usuário não encontrado!", "error", "index.php");
+
+    }
+
+  } else {
+
+    $userData = $userDao->findById($id);
+
+    // Se não encontrar usuário
+    if(!$userData) {
+      $message->setMessage("Usuário não encontrado!", "error", "index.php");
+    }
+
+  }
+
+  $fullName = $user->getFullName($userData);
+
+  if($userData->image == "") {
+    $userData->image = "user.png";
+  }
+
+  // Filmes que o usuário adicionou
+  $userMovies = $movieDao->getMoviesByUserId($id);
 
 ?>
   <div id="main-container" class="container-fluid">
-    <div class="offset-md-4 col-md-4 new-movie-container">
-      <h1 class="page-title">Adicionar Filme</h1>
-      <p class="page-description">Adicione sua crítica e compartilhe com o mundo!</p>
-      <form action="<?= $BASE_URL ?>movie_process.php" id="add-movie-form" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="type" value="create">
-        <div class="form-group">
-          <label for="title">Título:</label>
-          <input type="text" class="form-control" id="title" name="title" placeholder="Digite o título do seu filme">
+    <div class="col-md-8 offset-md-2">
+      <div class="row profile-container">
+        <div class="col-md-12 about-container">
+          <h1 class="page-title"><?= $fullName ?></h1>
+          <div id="profile-image-container" class="profile-image" style="background-image: url('<?= $BASE_URL ?>img/users/<?= $userData->image ?>')"></div>
+          <h3 class="about-title">Sobre:</h3>
+          <?php if(!empty($userData->bio)): ?>
+            <p class="profile-description"><?= $userData->bio ?></p>
+          <?php else: ?>
+            <p class="profile-description">O usuário ainda não escreveu nada aqui...</p>
+          <?php endif; ?>
         </div>
-        <div class="form-group">
-          <label for="image">Imagem:</label>
-          <input type="file" class="form-control-file" name="image" id="image">
+        <div class="col-md-12 added-movies-container">
+          <h3>Filmes que enviou:</h3>
+          <div class="movies-container">
+            <?php foreach($userMovies as $movie): ?>
+              <?php require("templates/movie_card.php"); ?>
+            <?php endforeach; ?>
+            <?php if(count($userMovies) === 0): ?>
+              <p class="empty-list">O usuário ainda não enviou filmes.</p>
+            <?php endif; ?>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="length">Duração:</label>
-          <input type="text" class="form-control" id="length" name="length" placeholder="Digite a duração do filme">
-        </div>
-        <div class="form-group">
-          <label for="category">Category:</label>
-          <select name="category" id="category" class="form-control">
-            <option value="">Selecione</option>
-            <option value="Ação">Ação</option>
-            <option value="Drama">Drama</option>
-            <option value="Comédia">Comédia</option>
-            <option value="Fantasia / Ficção">Fantasia / Ficção</option>
-            <option value="Romance">Romance</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="trailer">Trailer:</label>
-          <input type="text" class="form-control" id="trailer" name="trailer" placeholder="Insira o link do trailer">
-        </div>
-        <div class="form-group">
-          <label for="description">Descrição:</label>
-          <textarea name="description" id="description" rows="5" class="form-control" placeholder="Descreva o filme..."></textarea>
-        </div>
-        <input type="submit" class="btn card-btn" value="Adicionar filme">
-      </form>
+      </div>
     </div>
   </div>
 <?php

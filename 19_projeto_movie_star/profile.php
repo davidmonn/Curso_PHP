@@ -10,30 +10,31 @@
    $userDao = new UserDAO($conn, $BASE_URL);
    $movieDao = new MovieDAO($conn, $BASE_URL);
 
-   //Receber id do usuario
-   $id = filter_input(INPUT_GET, "id");
+  // Receber id do usuário
+  $id = filter_input(INPUT_GET, "id");
 
-   if(!empty($userData->id)) {
-    if($userData->id){
+  if(empty($id)) {
 
-        $id = $userData->id;
+    if(!empty($userData)) {
+
+      $id = $userData->id;
 
     } else {
 
-        $message->setMessage("Usuário não encontrado. ", "error", "index.php");
+      $message->setMessage("Usuário não encontrado!", "error", "index.php");
+
     }
 
-
-   } else {
+  } else {
 
     $userData = $userDao->findById($id);
 
-    // Se nao encontrar o usuario
-    if($userData) {
-        $message->setMessage("Usuário não encontrado. ", "error", "index.php");
+    // Se não encontrar usuário
+    if(!$userData) {
+      $message->setMessage("Usuário não encontrado!", "error", "index.php");
     }
 
-   }
+  }
 
    $fullName = $user->getFullName($userData);
 
