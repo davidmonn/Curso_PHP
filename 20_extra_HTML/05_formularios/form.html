@@ -9,7 +9,32 @@
     <form action="enviar.php" >
         <input type="text" name="teste">
         <br>
+        <h4>Informe o item mais utilizado em seu dia a dia</h4>
+        <input type="checkbox" name="Pc">Pc <br>
+        <input type="checkbox" name="VideoGame"> Video Game <br>
+        <input type="checkbox" name="notebook"> Notebook <br>
+        <input type="checkbox" name="celular"> Celular <br>
         <input type="submit" value="Enviar"> 
     </form>
+
+    <br>
+    
+    <form action="info.php">
+        <div>
+            Data de nascimento <input type="date" name="nascimento"> <br>
+        </div>
+    </form> <br><br>
+
+    <form action="selecione.php">
+        <h4>Selecione seu genero</h4>
+        <input type="radio" name="sexo" value="Masculino">Masculino
+        <input type="radio" name="sexo" value="Feminino">Feminino
+    </form> <br> <br>
+
+    <form action="comentario.php">
+        <h4>Nos deixe sua avaliacao:</h4>
+        <textarea name="comentario" rows="5" cols="30" placeholder="Deixe seu comentario"></textarea>
+    </form>
+
 </body>
 </html>
