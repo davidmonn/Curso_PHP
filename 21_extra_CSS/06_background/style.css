@@ -1,0 +1,13 @@
+/* Backgrounds */
+.div-background{
+    height: 300px; /* Tamanho que tera nossa Div */
+    /*width: 400px; /* Largura que tera nossa Div */
+    background-image: url('../images.png');
+}
+
+.titulo-background {
+    text-align: center;
+    background-color: aqua;
+    color: #000;
+}
+
