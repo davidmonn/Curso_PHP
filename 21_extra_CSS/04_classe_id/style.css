@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* Classe */
+.text {
+    color: red;
+}
+
+/* Id */
+#titulo-app {
+    text-align: center;
+    color: blue;
+}
