@@ -1,0 +1,46 @@
+/* Fontes */
+.family {
+    color: #000;
+    font-size: 25px;
+}
+
+.family.serif { /* Com isso podemos deixar esse elemento mais especifico, alterando algo em particular nele*/
+    color: red;
+}
+
+.serif {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sans-serif{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.monospace {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.oblique {
+    font-style: oblique;
+}
+
+.variant {
+    font-variant: small-caps;
+}
+
+.weight {
+    font-weight: bolder;
+}
+
+.family.monospace {
+    padding-bottom: 20px;
+    border-bottom: 3px solid black;
+}
+
+span {
+    text-decoration: underline;
+}
