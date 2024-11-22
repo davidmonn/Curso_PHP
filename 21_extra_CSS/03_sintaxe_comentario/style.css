@@ -1,0 +1,23 @@
+/*Melhor pratica*/
+h1 {
+    text-align: center;
+    color: red;
+    font-size: 3rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: brown;
+}
+
+/*Má pratica*/
+p {color: gray; text-align: center; font-size: 1.5rem;}
+
+/* Esse é um comentario */
+
+/* 
+    Tambem pode
+    ser feito
+    dessa forma
+*/
