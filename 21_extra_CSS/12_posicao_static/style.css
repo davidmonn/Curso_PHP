@@ -1,0 +1,47 @@
+/*
+body {
+    background-color: aqua;
+    width: 720px;
+    margin: auto;*
+    display: inline;
+}
+*/
+
+
+/*.box-model {
+    background-color: red;
+    border: 4px solid black;
+    padding: 30px 20px;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    /*display: none;*/
+    /*display: inline;
+    display: inline-block;
+    /*display: block;
+}*/
+
+p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/*Positions*/
+/*Static*/
+/*Relative*/
+/*Fixed*/
+/*Absolute*/
+/*Sticky*/
+
+.div-postion {
+    width: 500px;
+    height: 500px;
+    background-color: aliceblue;
+}
+
+/* Static - Posicao padrao - ela nao se posiciona */
+.static {
+    position: static;
+}
