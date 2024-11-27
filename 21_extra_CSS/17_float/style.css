@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/*body {
+    width: 720px;
+    margin: auto;
+}*/
+
+
+/*Float*/
+.container {
+    padding: 50px;
+}
+
+.div-float {
+    overflow: auto;
+}
+
+.img-float {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.p-float {
+    color: red;
+}
+
+.float-right {
+    float: right;
+}
