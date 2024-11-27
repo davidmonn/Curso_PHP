@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgba(0, 255, 255, 0.735);
+}
+
+/*Unidade de medidas*/
+.pixel-1 {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.pixel-2 {
+    background-color: blue;
+    width: 500px;
+    height: 50px;
+    margin: 5px 0;
+}
+
+.pai-porcentagem {
+    height: 500px;
+    width: 500px;
+    background-color: rgb(126, 0, 0);
+}
+
+.porcentagem-1 {
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+}
+
+.porcentagem-2 {
+    width: 50%;
+    height: 50%;
+    background-color: purple;
+}
+
+/*Em*/
+.pai-em {
+    font-size: 50px;
+}
+
+.em-1 {
+    width: 2em;
+    height: 2em;
+    background-color: purple;
+}
+
+/*Rem*/
+.rem-1 {
+    width: 1rem;
+    height: 1rem;
+    background-color: blue;
+}
+
+.rem-2 {
+    font-size: 2rem;
+}
