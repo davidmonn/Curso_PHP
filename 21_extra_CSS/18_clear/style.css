@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/*body {
+    width: 720px;
+    margin: auto;
+}*/
+
+body {
+    background-color: rgba(0, 255, 255, 0.735);
+}
+
+/*Float*/
+.container {
+    padding: 50px;
+}
+
+.div-float {
+    overflow: auto;
+}
+
+.img-float {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.p-float {
+    color: #000;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
