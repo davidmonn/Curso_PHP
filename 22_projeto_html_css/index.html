@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maxmum-scale=1, user-scalable=no">
+    <title>Contato</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Informacoes de endereco -->
+        <div id="address-container">
+            <div class="fade"></div>
+            <div id="address-content">
+                <h2><ion-icon name="navigate-outline"></ion-icon> Endereco:</h2>
+                <p>Rua das Flores, 133</p>
+                <h2><ion-icon name="call-outline"></ion-icon> Telefone:</h2>
+                <p>(11) 9 8585-8585</p>
+                <h2><ion-icon name="mail-outline"></ion-icon> E-mail:</h2>
+                <p>email-ficticio@gmail.com</p>
+            </div>
+        </div>
+        <!-- Formulario para contato -->
+        <div id="form-container">
+            <form id="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" name="name" placeholder="Digite seu nome: ">
+                <label for="phone">Telefone:</label>
+                <input type="text" name="phone" placeholder="Digite seu numero de telefone: ">
+                <label for="email">Email: </label>
+                <input type="email" name="email" placeholder="Digite seu email:">
+                <label for="msg">Sua mensagem:</label>
+                <textarea name="msg" cols="50" rows="10" placeholder="Digite sua mensagem para suporte: "></textarea>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="limpar">
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> <!-- Essa biblioteca pede para ser colocada no final de nosso body para funcionar -->
+</body>
+</html>
