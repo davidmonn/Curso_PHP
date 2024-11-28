@@ -1,10 +1,64 @@
 @charset "UTF-8";
-/*
-body {
-    background-color: aqua;
+/*Geral*/
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; /* Usado para os inputs nao ultrapasarem os limites das divs */
 }
-*/
 
-h1 {
-    color: red;
+/*Containers*/
+#main-container {
+    display: flex;
+    flex-direction: row; /* Com isso dizemos que nosso projeto tem apenas uma linha porem com divisoes */
+    height: 100vh;
+    width: 100vw;
+}
+
+#address-container,
+#form-container {
+    flex: 1 1 0; /* Deixamos as duas linhas colunas iguais em largura, 1 = de tamanho, 1 = diminuir de formas iguais e 0 = tamanho base, calculando automatico metade da tela*/
+    height: 100%; /*Com isso ira acompanhar a div pai (#main-container)*/
+    text-align: left;
+}
+
+/*Address Container contem a imagem de fundo*/
+#address-container {
+    background-image: url('../img/project_bg.jpg');
+    background-size: cover;
+    background-position-x: -130px;
+    color: #FFF;
+    position: relative;
+}
+
+.fade {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .7;
+}
+
+#address-content {
+    position: absolute;
+    top: 25vh;
+    left: 35vh;
+    width: 300px;
+}
+
+#address-content h2{
+    color: #00AD5E;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 40px;
+}
+
+#address-content ion-icon {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+#address-content p {
+    font-weight: bold;
+    margin-bottom: 50px;
 }
