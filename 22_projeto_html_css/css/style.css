@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*Geral*/
 * {
     margin: 0px;
@@ -61,4 +62,74 @@
 #address-content p {
     font-weight: bold;
     margin-bottom: 50px;
+}
+
+/*Form Container*/
+
+#form-container {
+    padding-top: 60px;
+    text-align: center;
+}
+
+#form-container h2 {
+    color: #888;
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+#contact-form {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#contact-form input,
+#contact-form label,
+#contact-form textarea {
+    display: block;
+    padding: 10px;
+    border: 1px solid #EEE;
+    width: 100%;
+    color: #AAA;
+}
+
+#contact-form label {
+    color: #999;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+#contact-form input {
+    margin-bottom: 15px;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: #CCC;
+}
+
+#contact-form input[type="submit"],
+#contact-form input[type="reset"] {
+    background-color: #00AD5E;
+    font-weight: bolder;
+    color: #00000083;
+    font-size: 16px;
+    cursor: pointer;
+    width: 300px;
+    margin: 15px auto;
+    border: 2px solid transparent;
+    transition: .5s;
+}
+
+
+#contact-form input[type="reset"] {
+    background-color: rgba(255, 0, 0, 0.721);
+    color: #00000084;
+}
+
+#contact-form input[type="submit"]:hover,
+#contact-form input[type="reset"]:hover {
+    border-color: #00AD5E;
+    background-color: #FFF;
 }
