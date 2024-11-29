@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maxmum-scale=1, user-scalable=no">
     <title>Contato</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?=$BASE_URL ?>css_php/style.css">
 </head>
 <body>
     <div id="main-container">
