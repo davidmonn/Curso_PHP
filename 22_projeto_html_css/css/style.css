@@ -133,3 +133,50 @@
     border-color: #00AD5E;
     background-color: #FFF;
 }
+
+/* Responsividade */
+@media(max-width: 450px) {
+    #main-container {
+        height: 100%;
+        flex-wrap: wrap; /* Com isso ele ira entender que esta tudo junto, tanto form quanto endereco e que cada um tera seu posicionamento novamente*/
+    }
+
+    #form-container,
+    #address-container {
+        flex: 1 1 100%; /* Juntando nosso flex wrap com esse 100% ele ira entender que um ira ficar abaixo do outro*/
+    }
+
+    #form-container {
+        order: -1; /* Com isso estamos dizendo que o container de formulario ira vir primeiro*/
+        padding: 20px;
+    }
+
+    #form-container h2 {
+        margin-bottom: 25px;
+    }
+
+    #contact-form {
+        width: 100%;
+    }
+
+    #contact-form input,
+    #contact-form label,
+    #contact-form textarea {
+        border-color: #aaa;
+}
+
+    #address-container {
+        background-position: 0;
+        height: 500px;
+    }
+
+    .fade {
+        opacity: .9;
+    }
+
+    #address-content { /* Aqui removemos o scroll lateral jogando nossa imagem para esquerda*/
+        top: 25%;
+        left: 25%;
+    }
+
+}
