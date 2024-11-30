@@ -61,3 +61,54 @@ h2 {
     width: 100%;
 }
 
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.options label {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.options a {
+    color: #6A5ACD;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #6A5ACD, #8A2BE2);
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.login-btn:hover {
+    background: linear-gradient(90deg, #8A2BE2, #6A5ACD);
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #6A5ACD;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link a,
+.options a:hover {
+    color: #8A2BE2;
+}
